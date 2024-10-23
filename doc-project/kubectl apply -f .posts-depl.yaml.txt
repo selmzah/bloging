@@ -1,0 +1,31 @@
+kubectl apply -f .\posts-depl.yaml
+kubectl deploy
+
+docker build -t freelancecap/event-bus . 
+docker push freelancecap/event-bus
+
+updating the image used by a deployment
+1- make a update to your code
+2- Build the image : docker build -t freelancecap/event-bus . 
+3- Push the image to docker hub : docker push freelancecap/event-bus
+Run the commande : kubectl rollout restart deployment [depl_name]
+
+skaffold
+Automates many tasks in a Kubernetes dev env
+Makes it really easy to pdate codein a runnung pod
+Makes it really easy to create/delete all objects tied to a project at once
+
+The cli to automate a change is skaffold dev from /blog
+
+mkdir ticketing
+/ticketing > mkdir auth
+C:\Users\elmza\ticketing\auth> npm init -y
+C:\Users\elmza\ticketing\auth> npm install typescript ts-node-dev express @types/express
+C:\Users\elmza\ticketing> code .
+PS C:\Users\elmza\ticketing\auth> npm install -g typescript
+
+added 1 package in 2s
+PS C:\Users\elmza\ticketing\auth> tsc --init
+C:\Users\elmza\ticketing\auth> npm start
+C:\Users\elmza\ticketing\auth> docker build -t freelancecap/auth .
+C:\Users\elmza\ticketing> skaffold dev 
