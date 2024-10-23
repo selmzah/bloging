@@ -15,6 +15,7 @@ app.get("/posts", (req, res) => {
 });
 
 app.post("/posts/create", async (req, res) => {
+  console.log('starting creation post!!');
   const id = randomBytes(4).toString("hex");
   const { title } = req.body;
 
